@@ -54,3 +54,56 @@ public class Manager
             );
     }
 }
+
+class Prog
+{
+    static void Main()
+    {
+        var orders = new List<Order>
+        {
+            new Order
+            {
+                CustomerName = "Mihai Pop",
+                Items =
+                {
+                    new OrderItem
+                    {
+                        ProductName = "Laptop", Quantity = 1, UnitPrice =  1000
+                    },
+                    new OrderItem
+                    {
+                        ProductName = "Smart Watch", Quantity = 3, UnitPrice = 500
+                    }
+                    
+                }
+            },
+            new Order
+            {
+                CustomerName = "Ana Ion",
+                Items =
+                {
+                    new OrderItem {ProductName = "Mouse", Quantity = 1, UnitPrice = 100}
+                }
+            }
+        };
+
+        var mng = new Manager();
+        var topCustomer = mng.SpentTheMost(orders);
+
+        var totalSpent = orders
+            .Where(o => o.CustomerName == topCustomer)
+            .Sum(o => o.CalculateFinalPrice());
+
+        Console.Write("The client who spent the most is ");
+        Console.WriteLine(topCustomer);
+
+        Console.Write("The customer spent a total of ");
+        Console.WriteLine(totalSpent);
+
+        Console.WriteLine("\nPopular products:");
+        foreach(var p in mng.PopularProducts(orders))
+        {
+            Console.WriteLine($"{p.Key}: {p.Value}");
+        }
+    }
+}
