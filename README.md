@@ -13,8 +13,10 @@ either Regular members (1 point per euro spent) or Gold members (2 points per eu
 be redeemed for free drinks.
 Each coffee shop has multiple baristas who prepare the orders. The system tracks which barista prepared
 which order, along with the order timestamp and total price.
+
 1.1 Please create a class diagram based on the above story. Include appropriate relationships, properties,
 and methods.
+
 1.2 Please create a database diagram (ER diagram) based on the story. Show tables, columns, primary
 keys, and foreign key relationships.
 
@@ -26,10 +28,14 @@ more items. For every item in an order, the system records the product name, the
 the unit price at the time of purchase.
 The company has a simple discount policy: if the total value of an order exceeds 500€, the customer
 receives a 10% discount on the entire order.
+
 2.1 Create the necessary C# classes to represent orders and their items with appropriate properties and
 data types.
+
 2.2 Implement a method that calculates the final price of an order, applying the discount rule when
 applicable.
+
 2.3 Implement a method that finds and returns the name of the customer who has spent the most
 money on all their orders.
+
 2.4 (Bonus) Implement a method that returns the popular products along with their total quantity sold.
